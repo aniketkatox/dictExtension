@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Captions Dictionary",  
+  "version": "1.0",
+  "description": "Chrome extension for YouTube Captions Dictionary",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["https://*.youtube.com/*"],
+      "run_at": "document_idle"
+    }
+  ]
+}
